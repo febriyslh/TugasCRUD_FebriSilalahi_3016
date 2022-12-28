@@ -8,7 +8,9 @@ import java.sql.SQLException;
 
 /**
  *
- * @author User
+ * @author Febri S
+ * 21103016
+ * SI05A
  */
 public class Main {
 

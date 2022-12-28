@@ -7,15 +7,21 @@ package edu.praktikumpbo.crudmahasiswasederhana.interfc;
 import edu.praktikumpbo.crudmahasiswasederhana.models.Mahasiswa;
 import java.sql.SQLException;
 import java.util.List;
+
 /**
  *
- * @author User
+ * @author Febri S
+ * 21103016
+ * SI05A
  */
 public interface MahasiswaInterface {
-    Mahasiswa insert(Mahasiswa o) throws SQLException;
-    void update (Mahasiswa o) throws SQLException;
-    void delete (String nim) throws SQLException;
-    List<Mahasiswa> getAll() throws SQLException;   
 
+    Mahasiswa insert(Mahasiswa o) throws SQLException;
+
+    void update(Mahasiswa o) throws SQLException;
+
+    void delete(String nim) throws SQLException;
+
+    List<Mahasiswa> getAll() throws SQLException;
 
 }

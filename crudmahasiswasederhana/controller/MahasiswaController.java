@@ -17,43 +17,46 @@ import java.util.List;
 
 /**
  *
- * @author User
+ * @author Febri S 
+ * 21103016 
+ * SI05A
  */
-public class MahasiswaController implements MahasiswaInterface{
+public class MahasiswaController implements MahasiswaInterface {
+
     PreparedStatement st;
 
     @Override
     public Mahasiswa insert(Mahasiswa o) throws SQLException {
-            st=ConectionHelper.getConnection().prepareStatement("insert into mahasiswa values(?,?,?)");
-            st.setString(1, o.getNim());
-            st.setString(2, o.getNama());
-            st.setString(3, o.getAlamat());     
-            st.executeUpdate();
-            return o;
-    }
-
-    public void update(Mahasiswa o) throws SQLException {
-        st=ConectionHelper.getConnection().prepareStatement("update mahasiswa set nama =?, alamat=?, nim=?");
+        st = ConectionHelper.getConnection().prepareStatement("insert into mahasiswa values(?,?,?)");
         st.setString(1, o.getNim());
         st.setString(2, o.getNama());
         st.setString(3, o.getAlamat());
         st.executeUpdate();
-          
+        return o;
+    }
+
+    public void update(Mahasiswa o) throws SQLException {
+        st = ConectionHelper.getConnection().prepareStatement("update mahasiswa set nama =?, alamat=?, nim=?");
+        st.setString(1, o.getNim());
+        st.setString(2, o.getNama());
+        st.setString(3, o.getAlamat());
+        st.executeUpdate();
+
     }
 
     @Override
     public void delete(String nim) throws SQLException {
-       st=ConectionHelper.getConnection().prepareStatement("delete from Mahasiswa where nim=?");
-       st.setString(1, nim);
-       st.executeUpdate();
+        st = ConectionHelper.getConnection().prepareStatement("delete from Mahasiswa where nim=?");
+        st.setString(1, nim);
+        st.executeUpdate();
     }
 
     @Override
     public List<Mahasiswa> getAll() throws SQLException {
-        Statement st= ConectionHelper.getConnection().createStatement();
-        ResultSet rs= st.executeQuery("select * from mahasiswa");
-        List<Mahasiswa>list=new ArrayList<Mahasiswa>();
-        while(rs.next()){
+        Statement st = ConectionHelper.getConnection().createStatement();
+        ResultSet rs = st.executeQuery("select * from mahasiswa");
+        List<Mahasiswa> list = new ArrayList<Mahasiswa>();
+        while (rs.next()) {
             Mahasiswa mhs = new Mahasiswa();
             mhs.setNim(rs.getString("nim"));
             mhs.setNama(rs.getNString("nama"));

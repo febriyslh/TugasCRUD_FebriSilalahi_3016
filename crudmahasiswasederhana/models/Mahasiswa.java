@@ -6,7 +6,9 @@ package edu.praktikumpbo.crudmahasiswasederhana.models;
 
 /**
  *
- * @author User
+ * @author Febri S
+ * 21103016
+ * SI05A
  */
 public class Mahasiswa {
 
@@ -46,5 +48,5 @@ public class Mahasiswa {
     public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
-    
+
 }

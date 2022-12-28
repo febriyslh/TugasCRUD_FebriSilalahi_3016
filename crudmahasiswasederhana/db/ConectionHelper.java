@@ -13,7 +13,9 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author User
+ * @author Febri S
+ * 21103016
+ * SI05A
  */
 public class ConectionHelper {
 
@@ -26,13 +28,13 @@ public class ConectionHelper {
         String url = "jdbc:mysql://localhost:3306/" + db;
         String username = "root";
         String pass = "";
-        
+
         if (connect == null) {
             try {
                 System.out.println("Membuat koneksi...");
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 connect = DriverManager.getConnection(
-                        url, 
+                        url,
                         username,
                         pass);
                 st = (Statement) connect.createStatement();
@@ -46,5 +48,4 @@ public class ConectionHelper {
         return connect;
     }
 
-    
 }
